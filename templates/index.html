@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Video Streaming Demo for Simple Face recognition by Kube 3 Team</title>
+  <style>
+  button {
+    margin: 4px;
+    cursor: pointer;
+  }
+  input {
+    margin: 4px;
+    color: blue;
+  }
+  span {
+    font-family: arial;
+    font-size: 12pt;
+    font-weight: bold;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<H1> Simple Face Recognition DEMO using Youtube Video </H1>
+<H2> - Kube 3 Team </H2>
+<BR>
+<BR>
+<form method="POST" action="/result">
+    <input id="yturl" type="text" name="murl"> 
+    <input id="mysubmit" type="submit"/>
+</form>
+
+<SPAN id = 'progtext'>
+Your Youtube : 
+<p id="myurl"></p>
+</SPAN>
+
+<div id='result'>
+</div>
+ 
+<script>
+$( "#yturl" ).click(function() {
+  $( "#yturl" ).val('');
+});
+
+$( "#mysubmit" ).click(function() {
+  var urltext = $("#yturl").val() + ' Is now being analyzed ... ';
+  $( "#myurl" ).text(urltext);
+  $( "#result" ).load('test?url=' + urltext );
+});
+
+</script>
+
+</body>
+</html>
